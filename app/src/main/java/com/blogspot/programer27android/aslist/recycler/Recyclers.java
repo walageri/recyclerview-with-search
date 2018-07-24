@@ -1,7 +1,6 @@
 package com.blogspot.programer27android.aslist.recycler;
-import android.content.res.ColorStateList;
+import android.content.Context;
 import android.graphics.Color;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,32 +21,38 @@ public class Recyclers extends AppCompatActivity {
     SearchView scV;
     List<Item> ls=new ArrayList<>();
     Readapter adapter;
+    String namaqori,zipnn;
+    Context context;
 
     RecyclerView recayclerView;
     RecyclerView.LayoutManager layoutManager;
     private void list(){
-        ls.add(new Item("nama1 ebg",R.string.alrahman001));
-        ls.add(new Item("nama2 ach",R.string.alrahman002));
-        ls.add(new Item("nama3 bdi",R.string.alrahman003));
-        ls.add(new Item("nama4 cej",R.string.alrahman004));
-        ls.add(new Item("nama5 dfk",R.string.alrahman005));
-        ls.add(new Item("nama6 egl",R.string.alrahman006));
+        ls.add(new Item("nama1 ebg",R.string.alrahman001,R.string.play001));
+        ls.add(new Item("nama2 ach",R.string.alrahman002,R.string.play002));
+        ls.add(new Item("nama3 bdi",R.string.alrahman003,R.string.play003));
+        ls.add(new Item("nama4 cej",R.string.alrahman004,R.string.play004));
+        ls.add(new Item("nama5 dfk",R.string.alrahman005,R.string.play005));
+        ls.add(new Item("nama6 egl",R.string.alrahman006,R.string.play006));
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycl_tst);
+        context=getApplicationContext();
+        namaqori="misyari";
+        zipnn="ini zip link";
         recayclerView = findViewById(R.id.r);
         list();
         recayclerView.setHasFixedSize(true);
         layoutManager=new LinearLayoutManager(this);
         recayclerView.setLayoutManager(layoutManager);
 
-        adapter=new Readapter(ls,getApplicationContext());
+        adapter=new Readapter(ls,context,namaqori,zipnn);
         recayclerView.setAdapter(adapter);
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

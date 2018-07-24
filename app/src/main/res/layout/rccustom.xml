@@ -15,6 +15,7 @@
                 android:layout_width="match_parent"
                 android:id="@+id/nama_surat"
                 android:text="@string/Al_Fatihah"
+                android:textStyle="bold"
                 android:layout_marginLeft="14dp"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
@@ -22,6 +23,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:id="@+id/lin"
+                android:text="@string/Al_Fatihah"
+                android:layout_marginLeft="14dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/play"
                 android:text="@string/Al_Fatihah"
                 android:layout_marginLeft="14dp"
                 android:layout_gravity="center"
